@@ -1,7 +1,7 @@
 # ar-box
 
 ## Description
-Attach a AR Box onto a checker board.
+Attach a AR Box onto a checkerboard.
 
 ## Keywords
 camera model, lens distortion, projection model.
