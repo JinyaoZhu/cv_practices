@@ -8,3 +8,5 @@ PnP, DLT
 
 ## Demo
 <img src='video.gif' height=220px /><img src='motion.gif' height=220px />
+
+Dataset from: http://rpg.ifi.uzh.ch/docs/teaching/2018/exercise2.zip.
