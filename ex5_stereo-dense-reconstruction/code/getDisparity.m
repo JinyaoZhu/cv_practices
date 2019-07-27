@@ -67,7 +67,7 @@ parfor i = (1+r):(rows-r)
         if (num_candidates<3) && (d_tmp ~= 1) && (d_tmp ~= length(ssds))
             % ssd = p(1)x^2 + p(2)x + p(3)
         	p = polyfit(d_tmp-1:1:d_tmp+1, ssds(d_tmp-1:d_tmp+1), 2);
-            disp_img(i,j) =  max_disp + p(2)/(2*p(1));
+            disp_img(i,j) =  max_disp - (-p(2)/(2*p(1)));
         else
             disp_img(i,j) = 0;
         end
