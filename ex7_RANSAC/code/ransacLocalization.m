@@ -37,7 +37,7 @@ best_inlier_mask = zeros(1, num_matched);
 max_num_inlier = 0;
 max_num_inliers_history = zeros(1,num_iters);
 
-
+tic;
 for i = 1:num_iters
     [sampled_keypoints, idx] = ...
         datasample(matched_query_keypoints, 6, 2, 'Replace', false);
@@ -60,7 +60,7 @@ for i = 1:num_iters
     
     max_num_inliers_history(i) = max_num_inlier;
 end
-
+toc
 inliers_keypoints = matched_query_keypoints(:,best_inlier_mask>0);
 inliers_landmarks = matched_landmarks(:,best_inlier_mask>0);
 best_guess = estimatePoseDLT(inliers_keypoints, inliers_landmarks, K);
