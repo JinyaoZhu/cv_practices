@@ -1,0 +1,4 @@
+1. Download the full Caltech101 datast at:
+http://www.vision.caltech.edu/Image_Datasets/Caltech101/101_ObjectCategories.tar.gz
+
+2. the bookCovers dataset should come with Matlab, under the folder 'toolbox/vision/visiondata/'.
