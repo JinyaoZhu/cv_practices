@@ -12,7 +12,7 @@ image_sets = partition(image_sets, min_num, 'randomize');
 [training_sets, validation_sets] = partition(image_sets, 0.3, 'randomize');
 
 %% generate visual vocabulary
-bag = ; % EXERCISE create bag of words
+bag =  bagOfFeatures(image_sets); % EXERCISE create bag of words
 
 %% visualize a sample image
 img = read(image_sets(randi(3)), randi(min_num));
@@ -28,13 +28,13 @@ subplot(2,1,2);
 imshow(img);
 
 %% train a classifier
-classifier = % EXERCISE train classifier
+classifier = trainImageCategoryClassifier(training_sets,bag);% EXERCISE train classifier
 
 %% evaluate classifier 
 disp('evaluate on the training dataset...');
-train_conf_matrix = % EXERCISE evaluate on training set
+train_conf_matrix = evaluate(classifier,training_sets);% EXERCISE evaluate on training set
 disp('evaluate on the validation dataset...');
-validation_conf_matrix = % EXERCISE evaluate on validation set
+validation_conf_matrix = evaluate(classifier,validation_sets);% EXERCISE evaluate on validation set
 
 
 %% predict the image classification
@@ -42,6 +42,6 @@ img = read(image_sets(randi(3)), randi(min_num));
 fig2 = figure('Name', 'a random image from the validation sets', ...
     'NumberTitle', 'off');
 imshow(img);
-[label_idx, score] = % EXERCISE predict the category for img
+[label_idx, score] =  predict(classifier,img);% EXERCISE predict the category for img
 disp(['the image category is ', cell2mat(classifier.Labels(label_idx))]);
 disp(['the classification score is ', num2str(score)]);

@@ -6,7 +6,7 @@ bookcover_folder = fullfile('dataset', 'bookCovers');
 image_set = imageSet(bookcover_folder);
 
 %% generate visual vocabulary and index images
-image_index = % EXERCISE index image
+image_index = indexImages(image_set);% EXERCISE index image
 
 %% retrieval images
 query_folder = fullfile(bookcover_folder, 'queries');
@@ -16,8 +16,8 @@ result_imgs = cell(3,1);
 for i = 1:3
     query_img = imread(fullfile(query_folder, ['query', int2str(i), '.jpg']));
     disp(['Query image: ', ['query', int2str(i), '.jpg']]);
-    img_ids = % EXERCISE query image
-    best_id = % EXERCISE find the best match id
+    img_ids = retrieveImages(query_img,image_index);% EXERCISE query image
+    best_id = img_ids(1);% EXERCISE find the best match id
     result_img = imread(cell2mat(image_set.ImageLocation(best_id)));
     disp(['Result image:', cell2mat(image_set.ImageLocation(img_ids(1)))]);
     
