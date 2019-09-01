@@ -1,8 +1,5 @@
 clear; clc;
 
-% Assumes reference solution of exercise 1 at this location (!).
-addpath('../../ex1_ar-box/code');
-
 hidden_state = load('../data/hidden_state.txt');
 observations = load('../data/observations.txt');
 num_frames = 150;
